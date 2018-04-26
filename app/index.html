@@ -1,36 +1,106 @@
-<!DOCTYPE html>
-<html lang="en" ng-app="myApp" class="no-js">
+<!-- angular-chessboard.js -->
+<!doctype html>
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Chess Project - Smart Sailors</title>
+  <title></title>
   <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
-  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
+  <meta name="viewport" content="width=device-width">
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400'
+        rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet"
+        href="../bower_components/chessboard.js/dist/css/chessboard.css"/>
   <link rel="stylesheet" href="app.css">
-  <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
-<body>
-<!--   <ul class="menu">
-    <li><a href="#!/view1">view1</a></li>
-    <li><a href="#!/view2">view2</a></li>
-  </ul> -->
+<body data-ng-app="nywton.chessboard.app" data-ng-controlloer="BodyCtrl">
+<div class="container">
 
-  <div ng-view></div>
+  <div class="cf">
+    <button data-ng-click="_showBoard = !_showBoard">show/hide</button>
 
-  <div>Chess Project : v<span app-version></span></div>
+    <div class="cf">
+      <div class="example board board-fluid-xs" data-ng-if="_showBoard">
+        <nywton-chessboard board="board" data-nywton-chessboard-autoresize
+                           data-nywton-position-ruy-lopez></nywton-chessboard>
+        <div data-chessboard-debug="board"></div>
+      </div>
+    </div>
+  </div>
 
-  <!-- In production use:
-  <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
-  -->
-  <script src="bower_components/angular/angular.js"></script>
-  <script src="bower_components/angular-route/angular-route.js"></script>
-  <script src="app.js"></script>
-  <script src="view1/view1.js"></script>
-  <script src="view2/view2.js"></script>
-  <script src="components/version/version.js"></script>
-  <script src="components/version/version-directive.js"></script>
-  <script src="components/version/interpolate-filter.js"></script>
+  <div class="cf">
+    <div class="example board board-sm">
+      <nywton-chessboard></nywton-chessboard>
+    </div>
+    <div class="example board board-sm">
+      <nywton-chessboard board="boardA" data-position="'empty'"></nywton-chessboard>
+    </div>
+    <div class="example board board-sm">
+      <nywton-chessboard board="boardB" data-draggable="false"></nywton-chessboard>
+    </div>
+  </div>
+  <div class="cf">
+    <div class="example board board-xs">
+      <nywton-chessboard board="boardC" data-position="'empty'"></nywton-chessboard>
+    </div>
+    <div class="example board board-fluid-xs">
+      <nywton-chessboard board="boardD" data-nywton-chessboard-autoresize></nywton-chessboard>
+    </div>
+
+    <div class="example board board-fluid-xs">
+      <nywton-chessboard board="boardE" data-nywton-chessboard-autoresize
+                         data-nywton-position-ruy-lopez></nywton-chessboard>
+    </div>
+  </div>
+
+  <div class="cf">
+    <div class="example board board-xs">
+      <nywton-chessboard board="boardF" spare-pieces="true"
+                         position="'start'"></nywton-chessboard>
+    </div>
+
+    <div class="">
+      <button type="button" class="" data-ng-click="boardF.start();">Start</button>
+      <button type="button" class="" data-ng-click="boardF.clear();">Clear</button>
+    </div>
+
+  </div>
+
+  <div class="footer">
+    <p>
+      <small>angular-chessboard</small>
+    </p>
+  </div>
+</div>
+
+<!-- angular-chessboard.js -->
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/chessboard.js/dist/js/chessboard.js"></script>
+<script src="dist/angular-chessboard.min.js"></script>
+<script src="app.js"></script>
+
+
+<!-- angular-chess.js -->
+<script src="bower_components/angular-chessboard/angular-chessboard.js">
+</script>
+<script src="bower_components/angular-chess/angular-chess.js">
+</script>
+
+<!-- angular-chessboard.js -->
+<link rel="stylesheet" href="/chessboard.js/css/chessboard.css"/>
+<script src="/chessboard.js/js/chessboard.js"></script>
+<script src="/angular-chessboard/dist/angular-chessboard.min.js"></script>
+
+
 </body>
 </html>

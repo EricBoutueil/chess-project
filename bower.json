@@ -1,15 +1,19 @@
 {
   "name": "angular-seed",
-  "description": "A starter project for AngularJS",
-  "version": "0.0.0",
-  "homepage": "https://github.com/angular/angular-seed",
-  "license": "MIT",
-  "private": true,
   "dependencies": {
     "angular": "~1.5.0",
     "angular-route": "~1.5.0",
     "angular-loader": "~1.5.0",
     "angular-mocks": "~1.5.0",
-    "html5-boilerplate": "^5.3.0"
+    "html5-boilerplate": "^5.3.0",
+    "angular-chessboard": "theborakompanioni/angular-chessboard#^0.0.7",
+    "chess.js": "*",
+    "chessboard.js": "theborakompanioni/chessboardjs#1.0.0",
+    "jquery": "^2.1.0"
+  },
+  "main": ["angular-chess.js"],
+  "devDependencies": {
+    "angular-mocks": "^1.2.13",
+    "angular-scenario": "^1.2.13"
   }
 }
