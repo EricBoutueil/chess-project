@@ -15,5 +15,8 @@
     "chess.js": "*",
     "chessboard.js": "theborakompanioni/chessboardjs#1.0.0",
     "jquery": "^2.1.0"
+  },
+  "resolutions": {
+    "angular": "1.5.11"
   }
 }
