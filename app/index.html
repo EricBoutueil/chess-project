@@ -8,6 +8,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <link rel="stylesheet" href="app.css">
+  <link rel="stylesheet"
+  href="bower_components/chessboard.js/css/chessboard.css" />
 
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
 
@@ -16,12 +18,42 @@
   <!-- <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script> -->
 
 </head>
-<body>
+<body data-ng-app="myApp" data-ng-controlloer="BodyCtrl">
 
   <h1>Chess Project - AgularJS - Smart Sailor</h1>
 
+  <div class="container">
+
+    <div class="cf">
+      <div class="example board board-sm">
+      <nywton-chessgame
+        game="game"
+        board="board"
+      ></nywton-chessgame>
+      </div>
+    </div>
+
+
+    <div class="cf">
+      <div class="example board board-sm">
+        <nywton-chessboard
+          board="boardB"
+          position="'start'"
+          draggable="true"
+          data-nywton-allow-only-legal-moves
+        ></nywton-chessboard>
+      </div>
+    </div>
+
+
+
   <script src="bower_components/angular/angular.js"></script>
-  <script src="bower_components/angular-route/angular-route.js"></script>
+
+  <script src="bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="bower_components/chessboard.js/js/chessboard.js"></script>
+  <script src="bower_components/chess.js/chess.js"></script>
+  <script
+    src="bower_components/angular-chessboard/angular-chessboard.js"></script>
 
   <script src="app.js"></script>
 
