@@ -6,7 +6,7 @@ angular.module('myApp', ['nywton.chess'])
   chessboardProvider.pieceTheme('bower_components/chessboard.js/dist/img/chesspieces/wikipedia/{piece}.png');
 }])
 
-.controller('BodyCtrl', function BodyCtrl() {
+.controller('BodyCtrl', ['$scope', function BodyCtrl($scope) {
   this.turnFor = function turnFor(game) {
     return game.turn() === "w" ? "White's turn !" : "Black's turn !" ;
   };
@@ -27,7 +27,10 @@ angular.module('myApp', ['nywton.chess'])
       return "Ongoing game"
     }
   };
-})
+  this.cleanGame = function cleanGame($scope) {
+    $scope.game = new $window.ChessBoard();
+  }
+}])
 
 .directive('chessgameDebug', [function () {
   var directive = {
