@@ -9,13 +9,9 @@
 
   <link rel="stylesheet" href="app.css">
   <link rel="stylesheet"
-  href="bower_components/chessboard.js/css/chessboard.css" />
+  href="bower_components/chessboard.js/dist/css/chessboard.css" />
 
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
-
-  <!-- <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css"> -->
-  <!-- <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css"> -->
-  <!-- <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script> -->
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script> -->
 
 </head>
 <body data-ng-app="myApp" data-ng-controlloer="BodyCtrl">
@@ -24,36 +20,25 @@
 
   <div class="container">
 
-    <div class="cf">
-      <div class="example board board-sm">
-      <nywton-chessgame
-        game="game"
-        board="board"
-      ></nywton-chessgame>
-      </div>
-    </div>
-
 
     <div class="cf">
       <div class="example board board-sm">
-        <nywton-chessboard
-          board="boardB"
-          position="'start'"
-          draggable="true"
-          data-nywton-allow-only-legal-moves
-        ></nywton-chessboard>
+        <nywton-chessboard board="boardB" position="'start'"
+          draggable="true" data-nywton-allow-only-legal-moves></nywton-chessboard>
       </div>
     </div>
-
 
 
   <script src="bower_components/angular/angular.js"></script>
 
   <script src="bower_components/jquery/dist/jquery.min.js"></script>
-  <script src="bower_components/chessboard.js/js/chessboard.js"></script>
+
+  <script src="bower_components/chessboard.js/dist/js/chessboard.js"></script>
   <script src="bower_components/chess.js/chess.js"></script>
+
   <script
-    src="bower_components/angular-chessboard/angular-chessboard.js"></script>
+    src="bower_components/angular-chessboard/dist/angular-chessboard.js"></script>
+  <script src="bower_components/angular-chess/dist/angular-chess.js"></script>
 
   <script src="app.js"></script>
 
