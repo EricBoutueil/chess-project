@@ -20,20 +20,39 @@
 
   <div class="container">
 
+
+    <div>
+      <h2>Please enter the players' names:</h2>
+      <label>Player 1:</label>
+      <input type="text" ng-model="ctrl.playerOne" placeholder="Enter a name here">
+      <label>Player 2:</label>
+      <input type="text" ng-model="ctrl.playerTwo" placeholder="Enter a name here">
+      <br>
+      <h2>Hello {{ctrl.playerOne | capitalize}} and {{ctrl.playerTwo | capitalize}} !</h2>
+      <p>{{ctrl.playerOne | capitalize}} will be <strong>White</strong> and {{ctrl.playerTwo | capitalize}} will be <strong>Black</strong>.</p>
+    </div>
+
+    <hr>
+
     <div class="cf">
       <div class="example board board-sm">
         <nywton-chessgame
           game="game"
           board="board"
         ></nywton-chessgame>
+      </div>
+    </div>
+
+    <div>
         <br>
         <b>Who's the turn for?</b>
-        <p>--> {{ctrl.turnFor(game)}}</p>
+        <p>--> {{ctrl.turnFor(game) | capitalize}}</p>
         <b>What's the game status?</b>
         <p>--> {{ctrl.gameStatus(game)}}</p>
+
         <br>
+
         <div data-chessgame-debug="game"></div>
-      </div>
     </div>
 
 
