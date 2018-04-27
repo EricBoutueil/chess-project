@@ -9,6 +9,10 @@
     "angular": "~1.5.0",
     "angular-route": "~1.5.0",
     "angular-loader": "~1.5.0",
-    "angular-mocks": "~1.5.0"
+    "angular-mocks": "~1.5.0",
+    "angular-chessboard": "~0.0.4",
+    "chess.js": "*",
+    "chessboard.js": "theborakompanioni/chessboardjs#1.0.0",
+    "jquery": "^2.1.0"
   }
 }
