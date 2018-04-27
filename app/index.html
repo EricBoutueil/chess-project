@@ -6,31 +6,43 @@
   <title>Chess Project - Smart Sailors</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
-  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
+
   <link rel="stylesheet" href="app.css">
-  <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+  <link rel="stylesheet"
+  href="bower_components/chessboard.js/dist/css/chessboard.css" />
+
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script> -->
+
 </head>
-<body>
-<!--   <ul class="menu">
-    <li><a href="#!/view1">view1</a></li>
-    <li><a href="#!/view2">view2</a></li>
-  </ul> -->
+<body data-ng-app="myApp" data-ng-controlloer="BodyCtrl">
 
-  <div ng-view></div>
+  <h1>Chess Project - AgularJS - Smart Sailor</h1>
 
-  <div>Chess Project : v<span app-version></span></div>
+  <div class="container">
 
-  <!-- In production use:
-  <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
-  -->
+
+    <div class="cf">
+      <div class="example board board-sm">
+        <nywton-chessboard board="boardB" position="'start'"
+          draggable="true" data-nywton-allow-only-legal-moves></nywton-chessboard>
+      </div>
+    </div>
+
+
   <script src="bower_components/angular/angular.js"></script>
-  <script src="bower_components/angular-route/angular-route.js"></script>
+
+  <script src="bower_components/jquery/dist/jquery.min.js"></script>
+
+  <script src="bower_components/chessboard.js/dist/js/chessboard.js"></script>
+  <script src="bower_components/chess.js/chess.js"></script>
+
+  <script
+    src="bower_components/angular-chessboard/dist/angular-chessboard.js"></script>
+  <script src="bower_components/angular-chess/dist/angular-chess.js"></script>
+
   <script src="app.js"></script>
-  <script src="view1/view1.js"></script>
-  <script src="view2/view2.js"></script>
-  <script src="components/version/version.js"></script>
-  <script src="components/version/version-directive.js"></script>
-  <script src="components/version/interpolate-filter.js"></script>
+
+  <!-- <script src="components/directives/abc.js"></script> -->
+
 </body>
 </html>
