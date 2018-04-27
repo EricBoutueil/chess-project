@@ -32,6 +32,13 @@
         <b>What's the game status?</b>
         <p>--> {{ctrl.gameStatus(game)}}</p>
         <br>
+
+        <div class="">
+          <button type="button" class="" data-ng-click="ctrl.cleanGame();">Clean</button>
+          <button type="button" class="" data-ng-click="ctrl.restartGame();">Restart</button>
+          <button type="button" class="" data-ng-click="ctrl.reverseColor();">Clean and reverse</button>
+        </div>
+
         <div data-chessgame-debug="game"></div>
       </div>
     </div>
