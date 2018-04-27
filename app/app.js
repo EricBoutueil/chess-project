@@ -7,8 +7,10 @@ angular.module('myApp', ['nywton.chess'])
 }])
 
 .controller('BodyCtrl', function BodyCtrl() {
+  this.playerOne = "Player1"
+  this.playerTwo = "Player2"
   this.turnFor = function turnFor(game) {
-    return game.turn() === "w" ? "White's turn !" : "Black's turn !" ;
+    return game.turn() === "w" ? this.playerOne + "'s turn" : this.playerTwo + "'s turn";
   };
   this.gameStatus = function gameStatus(game) {
     if (game.fen() === "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1") {
@@ -27,6 +29,12 @@ angular.module('myApp', ['nywton.chess'])
       return "Ongoing game"
     }
   };
+})
+
+.filter('capitalize', function() {
+    return function(input) {
+      return (!!input) ? input.charAt(0).toUpperCase() + input.substr(1).toLowerCase() : '';
+    }
 })
 
 .directive('chessgameDebug', [function () {
