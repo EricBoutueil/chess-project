@@ -14,20 +14,30 @@
   <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script> -->
 
 </head>
-<body data-ng-app="myApp" data-ng-controlloer="BodyCtrl">
+<body data-ng-app="myApp" data-ng-controller="BodyCtrl as ctrl">
 
   <h1>Chess Project - AgularJS - Smart Sailor</h1>
 
   <div class="container">
 
-
     <div class="cf">
       <div class="example board board-sm">
-        <nywton-chessboard board="boardB" position="'start'"
-          draggable="true" data-nywton-allow-only-legal-moves></nywton-chessboard>
+        <nywton-chessgame
+          game="game"
+          board="board"
+        ></nywton-chessgame>
+        <br>
+        <b>Who's the turn for?</b>
+        <p>--> {{ctrl.turnFor(game)}}</p>
+        <b>What's the game status?</b>
+        <p>--> {{ctrl.gameStatus(game)}}</p>
+        <br>
+        <div data-chessgame-debug="game"></div>
       </div>
     </div>
 
+
+  </div>
 
   <script src="bower_components/angular/angular.js"></script>
 
@@ -41,8 +51,6 @@
   <script src="bower_components/angular-chess/dist/angular-chess.js"></script>
 
   <script src="app.js"></script>
-
-  <!-- <script src="components/directives/abc.js"></script> -->
 
 </body>
 </html>
