@@ -6,7 +6,7 @@ angular.module('myApp', ['nywton.chess'])
   chessboardProvider.pieceTheme('bower_components/chessboard.js/dist/img/chesspieces/wikipedia/{piece}.png');
 }])
 
-.controller('BodyCtrl', [$scope, function BodyCtrl() {
+.controller('BodyCtrl', function BodyCtrl($scope) {
   // players names
   this.playerOne = "Player1"
   this.playerTwo = "Player2"
@@ -40,7 +40,7 @@ angular.module('myApp', ['nywton.chess'])
           $timeout.cancel(timer);
       }, 500);
   }
-}])
+})
 
 .filter('capitalize', function() {
     return function(input) {
