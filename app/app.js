@@ -6,7 +6,7 @@ angular.module('myApp', ['nywton.chess'])
   chessboardProvider.pieceTheme('bower_components/chessboard.js/dist/img/chesspieces/wikipedia/{piece}.png');
 }])
 
-.controller('BodyCtrl', function BodyCtrl($scope) {
+.controller('BodyCtrl', function BodyCtrl() {
   // players names
   this.playerOne = "Player1"
   this.playerTwo = "Player2"
@@ -30,15 +30,6 @@ angular.module('myApp', ['nywton.chess'])
     } else {
       return "Ongoing game"
     }
-  };
-  // game reset
-  $scope.reRender = true; //initial value
-  $scope.resetNytonChessgame = function(){
-      $scope.reRender = false;
-      var timer = $timeout(function(){
-          $scope.reRender = true;
-          $timeout.cancel(timer);
-      }, 500);
   }
 })
 
