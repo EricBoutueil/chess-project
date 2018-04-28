@@ -39,6 +39,7 @@
         <nywton-chessgame
           game="game"
           board="board"
+          ng-if="reRender"
         ></nywton-chessgame>
       </div>
     </div>
@@ -51,7 +52,8 @@
         <p>--> {{ctrl.gameStatus(game)}}</p>
 
         <br>
-
+        <button ng-click="resetNytonChessgame();">Reset game</button>
+        <br>
         <div data-chessgame-debug="game"></div>
     </div>
 

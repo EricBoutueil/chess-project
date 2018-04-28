@@ -6,12 +6,14 @@ angular.module('myApp', ['nywton.chess'])
   chessboardProvider.pieceTheme('bower_components/chessboard.js/dist/img/chesspieces/wikipedia/{piece}.png');
 }])
 
-.controller('BodyCtrl', function BodyCtrl() {
+.controller('BodyCtrl', [$scope, function BodyCtrl() {
+  // players names
   this.playerOne = "Player1"
   this.playerTwo = "Player2"
   this.turnFor = function turnFor(game) {
     return game.turn() === "w" ? this.playerOne + "'s turn" : this.playerTwo + "'s turn";
   };
+  // game status
   this.gameStatus = function gameStatus(game) {
     if (game.fen() === "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1") {
       return "Game not started"
@@ -29,7 +31,16 @@ angular.module('myApp', ['nywton.chess'])
       return "Ongoing game"
     }
   };
-})
+  // game reset
+  $scope.reRender = true; //initial value
+  $scope.resetNytonChessgame = function(){
+      $scope.reRender = false;
+      var timer = $timeout(function(){
+          $scope.reRender = true;
+          $timeout.cancel(timer);
+      }, 500);
+  }
+}])
 
 .filter('capitalize', function() {
     return function(input) {
