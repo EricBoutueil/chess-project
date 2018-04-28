@@ -76,8 +76,8 @@
           <p>{{ctrl.gameStatus(game)}}</p>
         </div>
           <div class="row mt">
-            <button class="btn btn-primary" ng-click="board.start()">Start</button>
-            <button class="btn btn-primary" ng-click="board.clear()">Clear</button>
+            <button class="btn btn-primary" ng-click="game.reset(); board.start()">Re-start</button>
+            <button class="btn btn-primary" ng-click="game.reset(); board.clear()">Clear</button>
           </div>
           <div class="row mt">
             <button class="btn btn-default" ng-click="board.flip()">Flip</button>
