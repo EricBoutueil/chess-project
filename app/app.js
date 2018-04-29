@@ -6,7 +6,7 @@ angular.module('myApp', ['nywton.chess'])
   chessboardProvider.pieceTheme('bower_components/chessboard.js/dist/img/chesspieces/wikipedia/{piece}.png');
 }])
 
-.controller('BodyCtrl', function BodyCtrl() {
+.controller('BodyCtrl', ['$scope', function BodyCtrl($scope){
   // players names
   this.playerOne = "Player1"
   this.playerTwo = "Player2"
@@ -14,7 +14,7 @@ angular.module('myApp', ['nywton.chess'])
     return game.turn() === "w" ? this.playerOne + "'s turn" : this.playerTwo + "'s turn";
   };
   // game status
-  this.gameStatus = function gameStatus(game) {
+  $scope.gameStatus = function gameStatus(game) {
     if (game.fen() === "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1") {
       return "Game not started"
     } else if (game.in_check() === true) {
@@ -31,7 +31,7 @@ angular.module('myApp', ['nywton.chess'])
       return "Ongoing game"
     }
   }
-})
+}])
 
 .filter('capitalize', function() {
     return function(input) {
